@@ -28,7 +28,7 @@ var config = {
 
   registryPort: 7001,
   webPort: 7002,
-  bindingHost: '10.58.151.53', // only binding on 127.0.0.1 for local access
+  bindingHost: '127.0.0.1', // only binding on 127.0.0.1 for local access
   // default is ctx.protocol
   protocol: '',
 
@@ -80,7 +80,9 @@ var config = {
   // default system admins
   admins: {
     // name: email
-    admin: 'demo@163.com'
+    fengmk2: 'fengmk2@gmail.com',
+    admin: 'admin@cnpmjs.org',
+    dead_horse: 'dead_horse@qq.com',
   },
 
   // email notification for errors
@@ -113,16 +115,16 @@ var config = {
    */
 
   database: {
-    db: 'cnpmjs',
-    username: 'devops',
-    password: 'Welcome8.',
+    db: 'cnpmjs_test',
+    username: 'root',
+    password: '',
 
     // the sql dialect of the database
     // - currently supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
-    dialect: 'mysql',
+    dialect: 'sqlite',
 
     // custom host; default: 127.0.0.1
-    host: '10.68.240.69',
+    host: '127.0.0.1',
 
     // custom port; default: 3306
     port: 3306,
@@ -160,7 +162,7 @@ var config = {
   downloadTgzDontCheckModule: false,
 
   // registry url name
-  registryHost: '10.58.151.53:7001',
+  registryHost: 'r.cnpmjs.org',
 
   /**
    * registry mode config
@@ -169,10 +171,10 @@ var config = {
   // enable private mode or not
   // private mode: only admins can publish, other users just can sync package from source npm
   // public mode: all users can publish
-  enablePrivate: true,
+  enablePrivate: false,
 
   // registry scopes, if don't set, means do not support scopes
-  scopes: [ '@cnpm', '@cnpmtest', '@cnpm-test', '@zx' ],
+  scopes: [ '@cnpm', '@cnpmtest', '@cnpm-test' ],
 
   // some registry already have some private packages in global scope
   // but we want to treat them as scoped private packages,
@@ -207,7 +209,7 @@ var config = {
   // none: do not sync any module, proxy all public modules from sourceNpmRegistry
   // exist: only sync exist modules
   // all: sync all modules
-  syncModel: 'exist', // 'none', 'all', 'exist'
+  syncModel: 'none', // 'none', 'all', 'exist'
 
   syncConcurrency: 1,
   // sync interval, default is 10 minutes
